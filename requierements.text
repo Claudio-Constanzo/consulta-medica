@@ -1,0 +1,3 @@
+Paso 1: Descargar aplicacion desde GitHub (ingresar link en el futuro)
+Paso 2: Para inicializar el programa abrir cmd, luego ingresar: py manage.py runserver
+//NOTA DEL DEV:  Para agregar una aplicacion: py manage.py startapp "nombreApp" y luego agregarla a settings.py en INSTALLED_APPS
