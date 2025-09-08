@@ -19,10 +19,12 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path
 from formulario.views import registro_view
+from formulario.views import doctor_view
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('registro/', registro_view, name='registro'), ##ruta de formulario de registro
+    path('doctor/', doctor_view, name='doctor')
 
 ]
 
