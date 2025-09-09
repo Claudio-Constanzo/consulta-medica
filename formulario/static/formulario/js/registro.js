@@ -36,21 +36,21 @@ function setFieldState(fieldId, {valid, msg=""}){
 }
 
 // Validadores individuales
-function validateNombre(){
+function validarNombre(){
   const v = $("nombre").value.trim();
-  const ok = v.length >= 2;
-  setFieldState("nombre", {valid: ok, msg: ok ? "✓ Correcto" : "Mínimo 2 caracteres."});
+  const ok = v.length >= 3;
+  setFieldState("nombre", {valid: ok, msg: ok ? "✓ Correcto" : "Mínimo 3 caracteres."});
   return ok;
 }
 
-function validateApellido(){
+function validarApellido(){
   const v = $("apellido").value.trim();
-  const ok = v.length >= 2;
-  setFieldState("apellido", {valid: ok, msg: ok ? "✓ Correcto" : "Mínimo 2 caracteres."});
+  const ok = v.length >= 5;
+  setFieldState("apellido", {valid: ok, msg: ok ? "✓ Correcto" : "Mínimo 5 caracteres."});
   return ok;
 }
 
-function validateFecha(){
+function validarFecha(){
   const iso = $("fecha_nacimiento").value;
   const edad = calcEdad(iso);
   $("edad").value = edad ?? "";
@@ -66,48 +66,48 @@ function validateFecha(){
   return ok;
 }
 
-function validateDireccion(){
+function validarDireccion(){
   const v = $("direccion").value.trim();
   const ok = v.length >= 5;
   setFieldState("direccion", {valid: ok, msg: ok ? "✓ Correcto" : "Mínimo 5 caracteres."});
   return ok;
 }
 
-function validateTelefono(){
+function validarTelefono(){
   const v = $("telefono").value.trim();
   const ok = /^\d{8,12}$/.test(v);
   setFieldState("telefono", {valid: ok, msg: ok ? "✓ Correcto" : "Solo números (8–12 dígitos)."});
   return ok;
 }
 
-function validatePrevision(){
+function validarPrevision(){
   const v = $("prevision").value;
   const ok = !!v;
-  setFieldState("prevision", {valid: ok, msg: ok ? "✓ Correcto" : "Selecciona una previsión."});
+  setFieldState("prevision", {valid: ok, msg: ok ? "Previsión seleccionada." : "Debes seleccionar una previsión."});
   return ok;
 }
 
 // Real-time: validar mientras el usuario escribe / cambia
 ["nombre","apellido","direccion","telefono"].forEach(id=>{
   $(id).addEventListener("input", () => {
-    if (id==="nombre") return validateNombre();
-    if (id==="apellido") return validateApellido();
-    if (id==="direccion") return validateDireccion();
-    if (id==="telefono") return validateTelefono();
+    if (id==="nombre") return validarNombre();
+    if (id==="apellido") return validarApellido();
+    if (id==="direccion") return validarDireccion();
+    if (id==="telefono") return validarTelefono();
   });
 });
-$("fecha_nacimiento").addEventListener("change", validateFecha);
-$("prevision").addEventListener("change", validatePrevision);
+$("fecha_nacimiento").addEventListener("change", validarFecha);
+$("prevision").addEventListener("change", validarPrevision);
 
 // Submit final: valida todo
 document.getElementById("formRegistro").addEventListener("submit", (ev)=>{
   const ok =
-    validateNombre() &
-    validateApellido() &
-    validateFecha() &
-    validateDireccion() &
-    validateTelefono() &
-    validatePrevision();
+    validarNombre() &
+    validarApellido() &
+    validarFecha() &
+    validarDireccion() &
+    validarTelefono() &
+    validarPrevision();
 
   if (!ok) {
     ev.preventDefault();

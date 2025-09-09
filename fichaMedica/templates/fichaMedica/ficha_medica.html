@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+     <div class="container">
+    <h1>Ficha Médica</h1>
+    {% if error %}<p class="error">{{ error }}</p>{% endif %}
+    <form id="formFicha" method="post" novalidate>
+      {% csrf_token %}
+      <div class="grid">
+        <div class="full">
+          <label for="id_paciente">ID del Paciente</label>
+          <input id="id_paciente" name="id_paciente" required>
+          <div class="error" id="err-id"></div>
+          <button type="button" class="btn" id="btnBuscar">Buscar</button>
+        </div>
+
+        <!-- Datos que deberían completarse automáticamente -->
+        <div>
+          <label for="nombre_paciente">Nombre del Paciente</label>
+          <input id="nombre_paciente" name="nombre_paciente" readonly>
+        </div>
+        <div>
+          <label for="telefono_paciente">Teléfono</label>
+          <input id="telefono_paciente" name="telefono_paciente" readonly>
+        </div>
+        <div class="full">
+          <label for="direccion_paciente">Dirección</label>
+          <input id="direccion_paciente" name="direccion_paciente" readonly>
+        </div>
+
+        <!-- Campos de la ficha -->
+        <div class="full">
+          <label for="titulo">Título</label>
+          <input id="titulo" name="titulo" required placeholder="Ej: Diagnóstico de Gripe">
+          <div class="error" id="err-titulo"></div>
+        </div>
+
+        <div class="full">
+          <label for="notas">Notas</label>
+          <textarea id="notas" name="notas" required placeholder="Escriba aquí las observaciones médicas..."></textarea>
+          <div class="error" id="err-notas"></div>
+        </div>
+
+        <div class="full">
+          <label for="hora_ficha">Hora de la ficha</label>
+          <input id="hora_ficha" name="hora_ficha" type="time" required>
+          <div class="error" id="err-hora"></div>
+        </div>
+      </div>
+
+      <button class="btn" type="submit">Guardar Ficha</button>
+    </form>
+  </div>
+</body>
+</html>
