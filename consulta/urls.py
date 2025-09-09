@@ -20,7 +20,7 @@ from django.contrib import admin
 from django.urls import path
 from formulario.views import registro_view
 from formulario.views import doctor_view
-from formulario.views import fichaMedica_view
+from fichaMedica.views import fichaMedica_view
 
 urlpatterns = [
     path('admin/', admin.site.urls),
