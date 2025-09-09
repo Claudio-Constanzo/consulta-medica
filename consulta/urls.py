@@ -19,7 +19,7 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path
 from formulario.views import registro_view
-from formulario.views import doctor_view
+from doctor.views import doctor_view
 from fichaMedica.views import fichaMedica_view
 
 urlpatterns = [
