@@ -19,15 +19,19 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path, include
 from formulario.views import registro_view
+from doctor.views import doctor_view
+from fichaMedica.views import fichaMedica_view
+from usuarios.views import usuarios_view
 
-from fichaMedica.views import ficha_medica_view
 from home.views import home
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('registro/', registro_view, name='registro'), ##ruta de formulario de registro
-    path('fichamedica/', ficha_medica_view, name='ficha_medica'), ##ruta de ficha medica
-    path('', home ) # ruta que se utiliza para vizualizar el inicio de la pagina
+    path('', home ), # ruta que se utiliza para vizualizar el inicio de la pagina
+    path('doctor/', doctor_view, name='doctor'), #Ruta para el formulario de registro de doctores
+    path('fichaMedica/', fichaMedica_view, name='fichaMedica'), #Ruta para el formulario de la ficha medica 
+    path('registro-usuarios/', usuarios_view, name='usuarios') #Ruta para el formulario de usuarios
 ]
 
 if settings.DEBUG:

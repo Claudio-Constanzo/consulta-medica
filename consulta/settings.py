@@ -41,8 +41,10 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'formulario',
     'fichaMedica',
-    'home',
-    'cita'
+    'doctor',
+    'usuarios',
+
+    'home'
 ]
 
 MIDDLEWARE = [
