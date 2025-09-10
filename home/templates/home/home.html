@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clínica</title>
+    <link rel="stylesheet" href="{% static 'homeApp/css/style.css'%}">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Header  -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <img src="{% static 'homeApp/img/logoW.webp' %}" alt="logo"">
+            </div>
+            
+
+            <nav class="nav">
+                <a href="#inicio" class="nav-link active">Inicio</a>
+                <a href="#nosotros" class="nav-link">Nosotros</a>
+                <a href="#contacto" class="nav-link">Contacto</a>
+            </nav>
+            
+            <!--botones para iniciar secion o registrarse-->
+            <div class="header-buttons">
+                <button class="btn btn-outline">Iniciar Sesión</button>
+                <button class="btn btn-primary">Registrarse</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Sección principal -->
+    <main>
+        <!-- Hero Section -->
+        <section id="inicio" class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1 class="hero-title">Cuidamos tus Oidos con Profesionalismo</h1>
+                    <p class="hero-subtitle">Brindamos atención médica de calidad a nuestros Pacientes</p>
+
+                    <!-- Boton de agendar cita-->
+                    <button class="btn btn-primary btn-large">Agendar Cita</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Información de la Clínica -->
+        <section id="nosotros" class="about">
+            <div class="container">
+                <h2 class="section-title">Nuestra Clínica</h2>
+                
+                <div class="about-grid">
+                    <div class="about-card">
+                        <i class="fas fa-hospital"></i>
+                        <h3>Instalaciones Modernas</h3>
+                        <p>Contamos con equipos de última tecnología y instalaciones cómodas para brindar la mejor atención.</p>
+                    </div>
+                    
+                    <div class="about-card">
+                        <i class="fas fa-user-md"></i>
+                        <h3>Profesionales Calificados</h3>
+                        <p>El equipo médico está altamente capacitado y comprometido con tu bienestar.</p>
+                    </div>
+                    
+                    <div class="about-card">
+                        <i class="fas fa-clock"></i>
+                        <h3>Horarios Flexibles</h3>
+                        <p>Atendemos de lunes a viernes con horarios amplios para tu comodidad.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contacto y Ubicación -->
+        <section id="contacto" class="contact">
+            <div class="container">
+                <h2 class="section-title">Contacto y Ubicación</h2>
+                
+                <div class="contact-grid">
+                    <div class="contact-info">
+                        <h3>Información de Contacto</h3>
+                        
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <strong>Dirección</strong>
+                                <p>Av. Principal 123, Centro Médico<br>Ciudad, Estado 12345</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <strong>Teléfono</strong>
+                                <p>definir</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <strong>Email</strong>
+                                <p>definir</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <i class="fas fa-clock"></i>
+                            <div>
+                                <strong>Horarios</strong>
+                                <p>definir</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="map-container">
+                        <div class="map-placeholder">
+                            <i class="fas fa-map"></i>
+                            <p>Mapa de Ubicación</p>
+                            <small>Definir</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer simple -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="{% static 'homeApp/img/logoW.webp' %}" alt="logo"">
+                </div>
+                
+                <div class="footer-links">
+                    <a href="#inicio">Inicio</a>
+                    <a href="#nosotros">Nosotros</a>
+                    <a href="#contacto">Contacto</a>
+                </div>
+                
+                <div class="footer-social">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Clínica . Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
