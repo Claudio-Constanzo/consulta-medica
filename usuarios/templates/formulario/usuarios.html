@@ -3,44 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Registro de Usuario</title>
+    <link rel="stylesheet" href="../../static/style.css">
 </head>
 <body>
-    <div>
-        <label for="primer_nombre">Primer Nombre</label>
-        <input id="primer_nombre" name="primer_nombre" required>
-    </div>
+    <div class="container">
+        <h1>Registro de Usuario</h1>
+        {% if error %}<p class="error">{{ error }}</p>{% endif %}
+        <form id="formUsuario" method="post" novalidate>
+            {% csrf_token %}
+            <div class="grid">
+                <div>
+                    <label for="primer_nombre">Primer Nombre</label>
+                    <input id="primer_nombre" name="primer_nombre" required>
+                    <div class="error" id="err-primer_nombre"></div>
+                </div>
 
-    <div>
-        <label for="segundo_nombre">Segundo Nombre</label>
-        <input id="segundo_nombre" name="segundo_nombre">
-    </div>
+                <div>
+                    <label for="segundo_nombre">Segundo Nombre</label>
+                    <input id="segundo_nombre" name="segundo_nombre">
+                    <div class="error" id="err-segundo_nombre"></div>
+                </div>
 
-    <div>
-        <label for="primer_apellido">Primer Apellido</label>
-        <input id="primer_apellido" name="primer_apellido" required>
-    </div>
+                <div>
+                    <label for="primer_apellido">Primer Apellido</label>
+                    <input id="primer_apellido" name="primer_apellido" required>
+                    <div class="error" id="err-primer_apellido"></div>
+                </div>
 
-    <div>
-        <label for="segundo_apellido">Segundo Apellido</label>
-        <input id="segundo_apellido" name="segundo_apellido">
-    </div>
+                <div>
+                    <label for="segundo_apellido">Segundo Apellido</label>
+                    <input id="segundo_apellido" name="segundo_apellido">
+                    <div class="error" id="err-segundo_apellido"></div>
+                </div>
 
-    <div class="full">
-        <label for="email">Correo Electrónico</label>
-        <input id="email" name="email" type="email" required>
-    </div>
+                <div class="full">
+                    <label for="email">Correo Electrónico</label>
+                    <input id="email" name="email" type="email" required>
+                    <div class="error" id="err-email"></div>
+                </div>
 
-    <div>
-        <label for="fecha_nacimiento">Fecha de Nacimiento</label>
-        <input id="fecha_nacimiento" name="fecha_nacimiento" type="date" required>
-    </div>
+                <div>
+                    <label for="fecha_nacimiento">Fecha de Nacimiento</label>
+                    <input id="fecha_nacimiento" name="fecha_nacimiento" type="date" required>
+                    <div class="error" id="err-fecha_nacimiento"></div>
+                </div>
 
-    <div class="full">
-        <label for="password">Contraseña</label>
-        <input id="password" name="password" type="password" required>
-    </div>
-    <button class="btn" type="submit">Registrar Usuario</button>
+                <div class="full">
+                    <label for="password">Contraseña</label>
+                    <input id="password" name="password" type="password" required>
+                    <div class="error" id="err-password"></div>
+                </div>
+            </div>
 
+            <button class="btn" type="submit">Registrar Usuario</button>
+        </form>
+    </div>
 </body>
 </html>
