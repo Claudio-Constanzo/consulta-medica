@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+    <h1>Registro de Paciente</h1>
+    {% if error %}<p class="error">{{ error }}</p>{% endif %}
+    <form id="formPaciente" method="post" novalidate>
+      {% csrf_token %}
+      <div class="grid">
+        <div>
+          <label for="rut">RUT</label>
+          <input id="rut" name="rut" placeholder="Ej: XX.XXX.XXX-X" required>
+          <div class="error" id="err-rut"></div>
+        </div>
+        <div>
+          <label for="nombre">Nombre</label>
+          <input id="nombre" name="nombre" required>
+          <div class="error" id="err-nombre"></div>
+        </div>
+        <div>
+          <label for="apellido">Apellido</label>
+          <input id="apellido" name="apellido" required>
+          <div class="error" id="err-apellido"></div>
+        </div>
+        <div class="full">
+          <label for="correo">Correo electrónico</label>
+          <input id="correo" name="correo" type="email" required>
+          <div class="error" id="err-correo"></div>
+        </div>
+        <div class="full">
+          <label for="direccion">Dirección</label>
+          <input id="direccion" name="direccion" required>
+          <div class="error" id="err-direccion"></div>
+        </div>
+        <div class="full">
+          <label for="telefono">Teléfono</label>
+          <input id="telefono" name="telefono" placeholder="Ej: 912345678" required>
+          <div class="error" id="err-telefono"></div>
+        </div>
+      </div>
+      <button class="btn" type="submit">Registrar Paciente</button>
+    </form>
+  </div>
+</body>
+</html>

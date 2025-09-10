@@ -21,12 +21,14 @@ from django.urls import path
 from formulario.views import registro_view
 from doctor.views import doctor_view
 from fichaMedica.views import fichaMedica_view
+from pacientes.views import pacientes_view
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('registro/', registro_view, name='registro'), ##ruta de formulario de registro
     path('doctor/', doctor_view, name='doctor'), #Ruta para el formulario de registro de doctores
-    path('fichaMedica/', fichaMedica_view, name='fichaMedica') #Ruta para el formulario de la ficha medica 
+    path('fichaMedica/', fichaMedica_view, name='fichaMedica'), #Ruta para el formulario de la ficha medica 
+    path('pacientes/', pacientes_view, name='pacientes') #Ruta para el formulario de pacientes
 
 ]
 
