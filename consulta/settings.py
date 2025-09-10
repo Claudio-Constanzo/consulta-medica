@@ -41,7 +41,8 @@ INSTALLED_APPS = [
     'formulario',
     'fichaMedica',
     'doctor',
-    'pacientes'
+    'pacientes',
+    'usuarios'
 ]
 
 MIDDLEWARE = [
