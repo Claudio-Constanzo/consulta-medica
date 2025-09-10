@@ -4,12 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <title>Registro de Paciente</title>
-    <link rel="stylesheet" href="{% static 'formulario/css/registro-style.css' %}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'formulario/css/formulariostyle.css' %}">
 </head>
 <body>
 
 <div class="container">
-    <h1>Registro de Usuario</h1>
+    <h1>Registro de Pacientes</h1>
 
     {% if error %}<p class="error">{{ error }}</p>{% endif %}
 
@@ -18,13 +19,13 @@
 
         <div>
             <label for="nombre">Nombre *</label>
-            <input id="nombre" name="nombre" required>
+            <input id="nombre" name="nombre" required placeholder="Ingrese su nombre">
             <div id="err-nombre" class="error" aria-live="polite"></div>
         </div>
 
         <div>
             <label for="apellido">Apellido *</label>
-            <input id="apellido" name="apellido" required>
+            <input id="apellido" name="apellido" required placeholder="Ingrese su apellido">
             <div id="err-apellido" class="error" aria-live="polite"></div>
         </div>
 

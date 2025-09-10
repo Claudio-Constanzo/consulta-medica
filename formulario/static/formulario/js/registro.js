@@ -116,4 +116,3 @@ document.getElementById("formRegistro").addEventListener("submit", (ev)=>{
     if (firstInvalid) firstInvalid.focus();
   }
 });
-// Añadir este script al HTML con:
