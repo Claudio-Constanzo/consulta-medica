@@ -36,6 +36,26 @@ function setFieldState(fieldId, {valid, msg=""}){
 }
 
 // Validadores individuales
+
+function validarRut() {
+    const input = $("rut");
+    let valor = input.value.toUpperCase(); // convertir a mayúscula por si escriben 'k'
+    let cuerpo = valor.slice(0, -1).replace(/\D/g, ''); // solo dígitos
+    let dv = valor.slice(-1); // último carácter
+    cuerpo = cuerpo.slice(0, 8);
+    if (dv && !/^[0-9K]$/.test(dv)) dv = "";
+      valor = cuerpo + dv;
+      input.value = valor;
+     const ok = /^(\d{7,8})([0-9K])?$/.test(valor);
+      setFieldState("rut", {
+        valid: ok,
+        msg: ok ? "✓ Correcto" : "Debe tener 7 u 8 dígitos y un digito verificador válido (0-9 o K)"
+    });
+
+    return ok;
+}
+$("rut").addEventListener("input", validarRut);
+
 function validarNombre(){
   const v = $("nombre").value.trim();
   const ok = v.length >= 3;

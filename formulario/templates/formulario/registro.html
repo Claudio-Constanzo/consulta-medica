@@ -18,6 +18,11 @@
         {% csrf_token %}
 
         <div>
+            <label for="rut">RUT *</label>
+            <input id="rut" name="rut" required placeholder="Ingrese su RUT sin puntos ni guion">
+            <div id="err-rut" class="error" aria-live="polite"></div>
+
+        <div>
             <label for="nombre">Nombre *</label>
             <input id="nombre" name="nombre" required placeholder="Ingrese su nombre">
             <div id="err-nombre" class="error" aria-live="polite"></div>
