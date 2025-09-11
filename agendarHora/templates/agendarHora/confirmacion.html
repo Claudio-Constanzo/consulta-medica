@@ -1,0 +1,16 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Cita Confirmada</title>
+    <link rel="stylesheet" href="{% static 'formulario/css/registro-style.css' %}">
+</head>
+<body>
+<div class="container">
+    <h1>¡Cita agendada con éxito!</h1>
+    <p>Tu cita ha sido registrada. Te esperamos en la fecha y hora indicada.</p>
+    <a href="{% url 'home' %}" class="btn btn-outline">Volver al inicio</a>
+</div>
+</body>
+</html>

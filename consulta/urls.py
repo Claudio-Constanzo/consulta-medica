@@ -22,6 +22,7 @@ from formulario.views import registro_view
 from doctor.views import doctor_view
 from fichaMedica.views import fichaMedica_view
 from usuarios.views import usuarios_view
+from agendarHora.views import agendar_cita_view, confirmacion_cita_view
 
 from home.views import home
 from cuentas import urls
@@ -33,7 +34,9 @@ urlpatterns = [
     path('doctor/', doctor_view, name='doctor'), #Ruta para el formulario de registro de doctores
     path('fichaMedica/', fichaMedica_view, name='fichaMedica'), #Ruta para el formulario de la ficha medica 
     path('registro-usuarios/', usuarios_view, name='usuarios'), #Ruta para el formulario de usuarios
-    path('cuenta/',include('cuentas.urls')) # rutas para registro y login
+    path('cuenta/',include('cuentas.urls')), # rutas para registro y login
+    path('agendar-cita/', agendar_cita_view, name='agendar-cita'), #ruta para agendar cita
+    path('cita-confirmacion/', confirmacion_cita_view, name='cita-confirmacion'), #ruta de confirmacion de cita    
 ]
 
 if settings.DEBUG:

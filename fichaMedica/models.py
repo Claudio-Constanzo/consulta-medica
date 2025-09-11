@@ -7,16 +7,14 @@ User = settings.AUTH_USER_MODEL  # Usamos el modelo User personalizado
 
 # Doctor
 class Doctor(models.Model):
-        
-    
-    user = models.OneToOneField(User, on_delete=models.CASCADE, related_name="doctor")
+    user = models.OneToOneField(User, on_delete=models.CASCADE, related_name="doctor_fichaMedica")
     # Si prefieren agregar más campos para el doctor, como especialidad o fecha de registro, podemos añadirlos aquí.
     def __str__(self):
         return f"Dr. {self.user.get_full_name()}"
 
 # Secretaria
 class Secretaria(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE, related_name="secretaria")
+    user = models.OneToOneField(User, on_delete=models.CASCADE, related_name="secretaria_fichaMedica")
     def __str__(self):
         return f"Secretaria: {self.user.get_full_name()}"
 
@@ -26,7 +24,7 @@ class Paciente(models.Model):
         ("FONASA","FONASA"), ("ISAPRE","ISAPRE"),
         ("PARTICULAR","PARTICULAR"), ("OTRA","OTRA"),
     ]
-    user = models.OneToOneField(User, on_delete=models.CASCADE, related_name="paciente")
+    user = models.OneToOneField(User, on_delete=models.CASCADE, related_name="paciente_fichaMedica")
     fecha_nacimiento = models.DateField()
     direccion = models.CharField(max_length=150)
     telefono = models.CharField(max_length=20)

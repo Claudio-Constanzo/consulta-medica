@@ -14,7 +14,7 @@
     <header class="header">
         <div class="container">
             <div class="logo">
-                <img src="{% static 'homeApp/img/logoW.webp' %}" alt="logo"">
+                <img src="{% static 'homeApp/img/logoW.webp' %}" alt="logo">
             </div>
             
 
@@ -46,7 +46,7 @@
                     <p class="hero-subtitle">Brindamos atención médica de calidad a nuestros Pacientes</p>
 
                     <!-- Boton de agendar cita-->
-                    <button class="btn btn-primary btn-large">Agendar Cita</button>
+                    <a href="{% url 'agendar-cita' %}" class="btn btn-primary btn-large">Agendar Cita</a>
                 </div>
             </div>
         </section>
