@@ -13,3 +13,4 @@ def agendar_cita_view(request):
 
 def confirmacion_cita_view(request):
     return render(request, 'agendarHora/confirmacion.html')
+
