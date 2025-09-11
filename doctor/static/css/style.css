@@ -92,3 +92,19 @@ form select {
 .btn:hover {
   background: var(--color-marron);
 }
+
+input.is-valid {
+    border: 2px solid green;
+}
+
+input.is-invalid {
+    border: 2px solid red;
+}
+
+.error.ok {
+    color: green;
+}
+
+.error.error {
+    color: red;
+}
