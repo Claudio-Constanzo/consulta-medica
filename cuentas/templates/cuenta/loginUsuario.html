@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Inicio de seccion</title>
+    <link rel="stylesheet" href="{% static 'cuentas/css/styleLo.css'%}">
+</head>
+<body>
+
+    <!--Formulario de Registrar-->
+    <form method="POST">
+        <h2>Inicio de Sección</h2>
+        {% csrf_token %}
+        <label>Correo:</label>
+        <input type="email" name="email" required><br><br>
+
+        <label>Contraseña:</label>
+        <input type="password" name="password" required><br><br>
+
+        <label>Rol:</label>
+        <select name="role" required>
+            <option value="usuario">Usuario</option>
+            <option value="doctor">Doctor</option>
+        </select><br><br>
+
+        <button type="submit">Iniciar sesión</button>
+    </form>
+</body>
+</html>

@@ -26,8 +26,15 @@
             
             <!--botones para iniciar secion o registrarse-->
             <div class="header-buttons">
-                <button class="btn btn-outline">Iniciar Sesión</button>
-                <button class="btn btn-primary">Registrarse</button>
+                <!--se utiliza para conectar las rutas de login y register-->
+                <a href="{% url 'cuenta:login'%}">
+                    <button class="btn btn-outline">Iniciar Sesión</button>
+                </a>
+
+                <a href="{%url 'cuenta:register'%}">
+                    <button class="btn btn-primary">Registrarse</button>
+                </a>
+
             </div>
         </div>
     </header>

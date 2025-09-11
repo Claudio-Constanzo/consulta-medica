@@ -1,5 +1,8 @@
 from django.db import models
 from django.conf import settings
+
+#importacion de modelo de user que trae Django
+from django.contrib.auth.models import AbstractUser
 # Create your models here.      
 
 
@@ -34,3 +37,5 @@ class Paciente(models.Model):
 
     def __str__(self):
         return f"Paciente: {self.user.get_full_name()}"
+
+

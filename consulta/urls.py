@@ -22,12 +22,14 @@ from formulario.views import registro_view
 
 from fichaMedica.views import ficha_medica_view
 from home.views import home
+from cuentas import urls
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('registro/', registro_view, name='registro'), ##ruta de formulario de registro
     path('fichamedica/', ficha_medica_view, name='ficha_medica'), ##ruta de ficha medica
-    path('', home ) # ruta que se utiliza para vizualizar el inicio de la pagina
+    path('', home, name='home' ), # ruta que se utiliza para vizualizar el inicio de la pagina
+    path('cuenta/',include('cuentas.urls'))
 ]
 
 if settings.DEBUG:
