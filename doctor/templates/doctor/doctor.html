@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -53,8 +54,6 @@
             <select id="especialidad" name="especialidad" required>
               <option value="">Selecciona…</option>
               <option>Medicina General</option>
-              <option>Pediatría</option>
-              <option>Cardiología</option>
               <option>Dermatología</option>
               <option>Otorrinolaringólogo</option>
               <option>Otra</option>
@@ -70,5 +69,6 @@
         <button class="btn" type="submit">Crear Cuenta</button>
       </form>
     </div>
+<script src="{% static 'static/js/validaciones.js' %}"></script>
 </body>
 </html>
