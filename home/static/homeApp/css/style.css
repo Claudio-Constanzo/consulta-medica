@@ -9,6 +9,7 @@
         --shadow: 0 2px 10px rgba(139, 107, 76, 0.1);
         --transition: all 0.3s ease;
     }
+    
 
     /* Reset básico */
     * {
@@ -209,34 +210,72 @@
         gap: 2rem;
     }
 
+        /* Tarjetas generales */
     .about-card {
         text-align: center;
         padding: 2rem;
         background: var(--color-crema);
         border-radius: 15px;
-        transition: var(--transition);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
+    /* Hover en la tarjeta completa */
     .about-card:hover {
-        transform: translateY(-5px);
-        box-shadow: var(--shadow);
+        transform: scale(1.03); /* toda la tarjeta se amplía ligeramente */
+        box-shadow: 0 10px 25px rgba(139, 107, 76, 0.2);
     }
 
-    .about-card i {
-        font-size: 3rem;
-        color: var(--color-cobre);
-        margin-bottom: 1rem;
+    /* Imágenes dentro de todas las tarjetas */
+    .about-card img.about-img {
+        width: 100%;
+        height: auto;
+        border-radius: 10px;
+        display: block;
+        margin: 1rem auto;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
-    .about-card h3 {
-        font-size: 1.5rem;
-        color: var(--color-marron);
-        margin-bottom: 1rem;
+    /* Hover estándar en imágenes */
+    .about-card img.about-img:hover {
+        transform: scale(1.1); /* aumento estándar */
+        box-shadow: 0 8px 20px rgba(139, 107, 76, 0.3);
     }
+
+    /* Tarjeta del medio */
+    .about-card.about-card-middle {
+        transform: scale(1.05);  /* tarjeta más grande */
+        z-index: 2;
+    }
+
+    /* Imagen del medio más grande */
+    .about-card.about-card-middle img.about-img {
+        width: 120%;           /* más ancha que las demás */
+        max-width: none;
+        transform: scale(1);    /* inicio sin hover */
+    }
+
+    /* Hover en la imagen del medio */
+    .about-card.about-card-middle img.about-img:hover {
+        transform: scale(1.15);   /* aumento más intenso */
+        box-shadow: 0 10px 25px rgba(139, 107, 76, 0.4);
+    }
+
+    /* Primer about-card: imagen menos intensa */
+    .about-card:first-child img.about-img:hover {
+        transform: scale(1.05);   /* solo un 5% de aumento */
+        box-shadow: 0 6px 15px rgba(139, 107, 76, 0.2);
+    }
+
 
     .about-card p {
         color: var(--color-dark);
         opacity: 0.8;
+        line-height: 1.5;
+        transition: transform 0.3s ease;
+    }
+
+    .about-card img.about-img:hover ~ p {
+        transform: translateY(30px);
     }
 
     /* Sección Contacto */

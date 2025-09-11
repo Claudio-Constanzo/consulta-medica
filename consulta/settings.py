@@ -43,7 +43,6 @@ INSTALLED_APPS = [
     'fichaMedica',
     'doctor',
     'usuarios',
-
     'home'
 ]
 
