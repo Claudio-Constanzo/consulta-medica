@@ -79,3 +79,21 @@ textarea {
 .btn:hover {
   background: var(--color-marron);
 }
+
+.ok {
+    color: green;
+}
+
+.error {
+    color: red;
+}
+
+.error {
+    font-size: 12px;
+    margin-top: 2px;
+}
+
+.ok {
+    font-size: 12px;
+    margin-top: 2px;
+}
