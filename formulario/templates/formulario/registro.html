@@ -1,101 +1,73 @@
 {% load static %}
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width,initial-scale=1"/>
-  <title>Registro de Paciente</title>
-  <link rel="stylesheet" href="{% static 'formulario/css/style.css' %}">
+    <meta charset="UTF-8">
+    <title>Registro de Paciente</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'formulario/css/formulariostyle.css' %}">
 </head>
 <body>
-<header class="site-header">
-  <h1>Registro de Paciente</h1>
-</header>
 
-<main>
-  <section aria-labelledby="form-title" class="container">
-    <h2 id="form-title" class="sr-only">Formulario de registro</h2>
+<div class="container">
+    <h1>Registro de Pacientes</h1>
 
-    {% if error %}<p class="error" role="alert">{{ error }}</p>{% endif %}
-
-    <!-- Resumen de errores para accesibilidad -->
-    <div id="error-summary" class="error" aria-live="polite"></div>
+    {% if error %}<p class="error">{{ error }}</p>{% endif %}
 
     <form id="formRegistro" method="post" novalidate>
-      {% csrf_token %}
+        {% csrf_token %}
 
-      <fieldset>
-        <legend>Datos personales</legend>
-        <div class="grid">
-          <div class="field">
-            <label for="nombre">Nombre <span aria-hidden="true">*</span></label>
-            <input id="nombre" name="nombre" type="text"
-                   autocomplete="given-name" required minlength="3" maxlength="15"
-                   aria-describedby="err-nombre">
+        <div>
+            <label for="rut">RUT *</label>
+            <input id="rut" name="rut" required placeholder="Ingrese su RUT sin puntos ni guion">
+            <div id="err-rut" class="error" aria-live="polite"></div>
+
+        <div>
+            <label for="nombre">Nombre *</label>
+            <input id="nombre" name="nombre" required placeholder="Ingrese su nombre">
             <div id="err-nombre" class="error" aria-live="polite"></div>
-          </div>
-
-          <div class="field">
-            <label for="apellido">Apellido <span aria-hidden="true">*</span></label>
-            <input id="apellido" name="apellido" type="text"
-                   autocomplete="family-name" required minlength="2" maxlength="50"
-                   aria-describedby="err-apellido">
-            <div id="err-apellido" class="error" aria-live="polite"></div>
-          </div>
-
-          <div class="field">
-            <label for="fecha_nacimiento">Fecha de nacimiento <span aria-hidden="true">*</span></label>
-            <input id="fecha_nacimiento" name="fecha_nacimiento" type="date" required
-                   aria-describedby="help-fecha err-fecha">
-            <small id="help-fecha" class="helper">La edad debe quedar entre 0 y 100 años.</small>
-            <div id="err-fecha" class="error" aria-live="polite"></div>
-          </div>
-
-          <!-- Edad oculta: se envía pero no se muestra -->
-          <input id="edad" name="edad" type="hidden">
         </div>
-      </fieldset>
 
-      <fieldset>
-        <legend>Contacto</legend>
-        <div class="grid">
-          <div class="field full">
-            <label for="direccion">Dirección <span aria-hidden="true">*</span></label>
-            <input id="direccion" name="direccion" type="text" required minlength="5" maxlength="150"
-                   autocomplete="street-address" aria-describedby="err-direccion">
+        <div>
+            <label for="apellido">Apellido *</label>
+            <input id="apellido" name="apellido" required placeholder="Ingrese su apellido">
+            <div id="err-apellido" class="error" aria-live="polite"></div>
+        </div>
+
+        <div>
+            <label for="fecha_nacimiento">Fecha de nacimiento *</label>
+            <input id="fecha_nacimiento" name="fecha_nacimiento" type="date" required>
+            <div id="err-fecha" class="error" aria-live="polite"></div>
+            <input id="edad" name="edad" type="hidden">
+        </div>
+
+        <div>
+            <label for="direccion">Dirección *</label>
+            <input id="direccion" name="direccion" required>
             <div id="err-direccion" class="error" aria-live="polite"></div>
-          </div>
+        </div>
 
-          <div class="field">
-            <label for="telefono">Teléfono <span aria-hidden="true">*</span></label>
-            <input id="telefono" name="telefono" type="tel" inputmode="numeric" required
-                   pattern="^\d{8,12}$" aria-describedby="help-tel err-telefono"
-                   placeholder="Solo números (8–12 dígitos)">
-            <small id="help-tel" class="helper">Ej: 987654321</small>
+        <div>
+            <label for="telefono">Teléfono *</label>
+            <input id="telefono" name="telefono" required placeholder="Solo números">
             <div id="err-telefono" class="error" aria-live="polite"></div>
-          </div>
+        </div>
 
-          <div class="field">
-            <label for="prevision">Previsión médica <span aria-hidden="true">*</span></label>
-            <select id="prevision" name="prevision" required aria-describedby="err-prevision">
-              <option value="">Selecciona…</option>
-              <option value="FONASA">FONASA</option>
-              <option value="ISAPRE">ISAPRE</option>
-              <option value="PARTICULAR">PARTICULAR</option>
-              <option value="OTRA">OTRA</option>
+        <div>
+            <label for="prevision">Previsión médica *</label>
+            <select id="prevision" name="prevision" required>
+                <option value="">Selecciona…</option>
+                <option>FONASA</option>
+                <option>ISAPRE</option>
+                <option>PARTICULAR</option>
+                <option>OTRA</option>
             </select>
             <div id="err-prevision" class="error" aria-live="polite"></div>
-          </div>
         </div>
-      </fieldset>
 
-      <div class="actions">
-        <button type="submit" class="btn">Registrar</button>
-        <button type="reset" class="btn secondary">Limpiar</button>
-      </div>
+        <button type="submit">Registrar</button>
     </form>
-  </section>
-</main>
+</div>
 
 <script src="{% static 'formulario/js/registro.js' %}"></script>
 </body>

@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Clínica</title>
+    <title>Consulta online  </title>
     <link rel="stylesheet" href="{% static 'homeApp/css/style.css'%}">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
@@ -30,11 +30,8 @@
                 <a href="{% url 'cuenta:login'%}">
                     <button class="btn btn-outline">Iniciar Sesión</button>
                 </a>
-
-                <a href="{%url 'cuenta:register'%}">
-                    <button class="btn btn-primary">Registrarse</button>
-                </a>
-
+                
+                <a href="{% url 'registro' %}" class="btn btn-primary">Registrarse</a>
             </div>
         </div>
     </header>
@@ -45,7 +42,7 @@
         <section id="inicio" class="hero">
             <div class="container">
                 <div class="hero-content">
-                    <h1 class="hero-title">Cuidamos tus Oidos con Profesionalismo</h1>
+                    <h1 class="hero-title">Cuidado especializado para tus oídos, nariz y garganta. Atención de calidad garantizada</h1>
                     <p class="hero-subtitle">Brindamos atención médica de calidad a nuestros Pacientes</p>
 
                     <!-- Boton de agendar cita-->
@@ -57,25 +54,26 @@
         <!-- Información de la Clínica -->
         <section id="nosotros" class="about">
             <div class="container">
-                <h2 class="section-title">Nuestra Clínica</h2>
-                
+                <h2 class="section-title">Nuestra Consulta</h2>
                 <div class="about-grid">
+                   <div class="about-card">
+                        <i class="fas fa-user-md"></i>
+                        <h3>Doctor Constanzo</h3>
+                        <img src="{% static 'homeApp/img/doctorconstanzo.jpg' %}" alt="Doctor Constanzo" class="about-img">
+                        <p>Especialista en Otorrinolaringología con más de 20 años de experiencia.</p>
+                    </div>
                     <div class="about-card">
                         <i class="fas fa-hospital"></i>
-                        <h3>Instalaciones Modernas</h3>
-                        <p>Contamos con equipos de última tecnología y instalaciones cómodas para brindar la mejor atención.</p>
-                    </div>
-                    
-                    <div class="about-card">
-                        <i class="fas fa-user-md"></i>
-                        <h3>Profesionales Calificados</h3>
-                        <p>El equipo médico está altamente capacitado y comprometido con tu bienestar.</p>
-                    </div>
+                        <h3>Consulta</h3>
+                        <img src="{% static 'homeApp/img/ubicacionconsulta.jpg' %}" alt="Consulta" class="about-img">
+                        <p>Encuéntranos en el Plaza Real edificio 504 Torre Flamenco.</p>
+                    </div> 
                     
                     <div class="about-card">
                         <i class="fas fa-clock"></i>
-                        <h3>Horarios Flexibles</h3>
-                        <p>Atendemos de lunes a viernes con horarios amplios para tu comodidad.</p>
+                        <h3>Tecnología</h3>
+                        <img src="{% static 'homeApp/img/instrumentosW.webp' %}" alt="microscopio" class="about-img">
+                        <p>Contamos con las herramientas mas adecuadas para su revisión.</p>
                     </div>
                 </div>
             </div>
@@ -94,7 +92,7 @@
                             <i class="fas fa-map-marker-alt"></i>
                             <div>
                                 <strong>Dirección</strong>
-                                <p>Av. Principal 123, Centro Médico<br>Ciudad, Estado 12345</p>
+                                <p>Colipi 484, Plaza Real, Torre Flamenco Oficina 504 piso 5<br>Copiapó, Atacama</p>
                             </div>
                         </div>
                         
@@ -102,23 +100,17 @@
                             <i class="fas fa-phone"></i>
                             <div>
                                 <strong>Teléfono</strong>
-                                <p>definir</p>
+                                <p>+52 230896</p>
                             </div>
                         </div>
                         
-                        <div class="contact-item">
-                            <i class="fas fa-envelope"></i>
-                            <div>
-                                <strong>Email</strong>
-                                <p>definir</p>
-                            </div>
-                        </div>
                         
                         <div class="contact-item">
                             <i class="fas fa-clock"></i>
                             <div>
                                 <strong>Horarios</strong>
-                                <p>definir</p>
+                                <p>De lunes a jueves: 10:30 am - 01:00 pm y 03:00 pm - 07:00 pm</p>
+                                <p>Viernes: 10:30 am - 01:00 pm</p>
                             </div>
                         </div>
                     </div>
@@ -127,7 +119,9 @@
                         <div class="map-placeholder">
                             <i class="fas fa-map"></i>
                             <p>Mapa de Ubicación</p>
-                            <small>Definir</small>
+                            <a href="https://www.google.com/maps/place/27°22'01.5%22S+70°19'53.3%22W/@-27.3670883,-70.3314819,17z/data=!3m1!4b1!4m4!3m3!8m2!3d-27.3670883!4d-70.3314819?entry=ttu&g_ep=EgoyMDI1MDkwNy4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="btn btn-primary" style="margin-top:10px;">
+                                Ver en Google Maps
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -149,15 +143,11 @@
                     <a href="#contacto">Contacto</a>
                 </div>
                 
-                <div class="footer-social">
-                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
-                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                </div>
+            
             </div>
             
             <div class="footer-bottom">
-                <p>&copy; 2025 Clínica . Todos los derechos reservados.</p>
+                <p>&copy; 2025 Clínica Doctor Constanzo . Todos los derechos reservados.</p>
             </div>
         </div>
     </footer>

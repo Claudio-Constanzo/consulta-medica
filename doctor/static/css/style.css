@@ -1,0 +1,110 @@
+:root {
+    --color-arena: #E4CDA7;
+    --color-crema: #FBF7F2;
+    --color-marron: #8B6B4C;
+    --color-cobre: #B87333;
+    --color-white: #ffffff;
+    --color-dark: #2c2c2c;
+    --shadow: 0 2px 10px rgba(139, 107, 76, 0.1);
+    --transition: all 0.3s ease;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: var(--color-crema);
+  color: var(--color-dark);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+}
+
+.container {
+  width: 100%;
+  max-width: 600px;
+  background: var(--color-white);
+  box-shadow: var(--shadow);
+  border-radius: 8px;
+  padding: 25px 30px;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 25px;
+  color: var(--color-marron);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* aumenta la separación entre los grupos de campos */
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* dos columnas iguales */
+  gap: 15px; /* separación entre los campos */
+}
+
+.grid .full {
+  grid-column: 1 / -1; /* ocupa toda la fila */
+}
+
+form label {
+  font-weight: bold;
+  margin-bottom: 4px; /* un poquito más de espacio */
+  color: var(--color-dark);
+  display: block;
+}
+
+form input,
+form select {
+  border: 1px solid var(--color-arena);
+  padding: 10px;
+  font-size: 14px;
+  border-radius: 4px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.error {
+  color: red;
+  font-size: 12px;
+  margin-top: 2px;
+}
+
+.btn {
+  margin-top: 15px;
+  padding: 10px 20px; /* tamaño normal del botón */
+  font-size: 14px;
+  cursor: pointer;
+  border: none;
+  background: var(--color-cobre);
+  color: var(--color-white);
+  border-radius: 4px;
+  justify-self: center;
+  transition: var(--transition);
+  width: fit-content; /* evita que sea gigante */
+  align-self: center; /* centra el botón */
+}
+
+.btn:hover {
+  background: var(--color-marron);
+}
+
+input.is-valid {
+    border: 2px solid green;
+}
+
+input.is-invalid {
+    border: 2px solid red;
+}
+
+.error.ok {
+    color: green;
+}
+
+.error.error {
+    color: red;
+}

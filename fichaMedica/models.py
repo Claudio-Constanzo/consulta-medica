@@ -1,12 +1,14 @@
 from django.db import models
 from django.conf import settings
-# Create your models here.  
+# Create your models here.      
 
 
 User = settings.AUTH_USER_MODEL  # Usamos el modelo User personalizado
 
 # Doctor
 class Doctor(models.Model):
+        
+    
     user = models.OneToOneField(User, on_delete=models.CASCADE, related_name="doctor")
     # Si prefieren agregar más campos para el doctor, como especialidad o fecha de registro, podemos añadirlos aquí.
     def __str__(self):

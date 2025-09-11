@@ -41,6 +41,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'formulario',
     'fichaMedica',
+    'doctor',
+    'usuarios',
     'home',
     'cuentas'
 ]
