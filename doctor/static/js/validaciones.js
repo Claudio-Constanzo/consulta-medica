@@ -19,7 +19,7 @@ function setFieldState(fieldId, { valid, msg = "" }) {
     }
 }
 
-// Validar Primer Nombre
+// Validar Primer Nombre en donde no permitimos que el nombre supere los 15 caracteres y que solo permita letras
 function validarNombre1() {
     const v = $("nombre1").value.trim();
     const ok = v.length > 0 && v.length <= 15 && /^[A-Za-zÁÉÍÓÚáéíóúÑñ ]+$/.test(v);
@@ -28,7 +28,7 @@ function validarNombre1() {
     return ok;
 }
 
-// Validar Segundo Nombre
+// Validar Segundo Nombre, lo mismo que el anterior, maximo 15 caracteres y solo letras
 function validarNombre2() {
     const v = $("nombre2").value.trim();
     const ok = v.length <= 15 && /^[A-Za-zÁÉÍÓÚáéíóúÑñ ]+$/.test(v);
@@ -37,7 +37,7 @@ function validarNombre2() {
     return ok;
 }
 
-// Validar Primer Apellido
+// Validar Primer Apellido 15 caracteres, solo letras
 function validarApellido1() {
     const v = $("apellido1").value.trim();
     const ok = v.length > 0 && v.length <= 15 && /^[A-Za-zÁÉÍÓÚáéíóúÑñ ]+$/.test(v);
@@ -46,7 +46,7 @@ function validarApellido1() {
     return ok;
 }
 
-// Validar Segundo Apellido
+// Validar Segundo Apellido 15 caracteres, solo letras
 function validarApellido2() {
     const v = $("apellido2").value.trim();
     const ok = v.length <= 15 && /^[A-Za-zÁÉÍÓÚáéíóúÑñ ]+$/.test(v);
@@ -55,7 +55,7 @@ function validarApellido2() {
     return ok;
 }
 
-// Validar RUT
+// Validar RUT, aca solo se permite un formato, el cual es XX.XXX.XXX-X, se permiten numeros y la letra K
 function validarRut() {
     const v = $("rut").value.trim();
     const regex = /^[0-9]{1,2}\.[0-9]{3}\.[0-9]{3}-[0-9kK]{1}$/;
@@ -65,7 +65,7 @@ function validarRut() {
     return ok;
 }
 
-// Validar Correo
+// Validar Correo, tiene un formato, debe contener un @, permite letras, numeros y caracteres especiales, pero como se menciono, debe cumplir con el formato a@a.a
 function validarCorreo() {
     const v = $("correo").value.trim();
     const ok = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(v);
@@ -74,16 +74,16 @@ function validarCorreo() {
     return ok;
 }
 
-// Validar Teléfono
+// Validar Teléfono, Solo números y debe ser un número válido de teléfono chileno.
 function validarTelefono() {
     const v = $("telefono").value.trim();
-    const ok = /^[9]{1}[0-9]{8}$/.test(v); // Solo números y debe ser un número válido de teléfono chileno.
+    const ok = /^[9]{1}[0-9]{8}$/.test(v); 
     console.log(`Validación teléfono: ${ok ? "✓ Correcto" : "Debe ser un teléfono válido."}`);
     setFieldState("telefono", { valid: ok, msg: ok ? "✓ Correcto" : "Debe ser un teléfono válido." });
     return ok;
 }
 
-// Validar Especialidad
+// Validar Especialidad debe ser obligatoria
 function validarEspecialidad() {
     const v = $("especialidad").value;
     const ok = v !== "";
@@ -92,10 +92,10 @@ function validarEspecialidad() {
     return ok;
 }
 
-// Validar Contraseña
+// Validar Contraseña debe tener un minimo de 6 caracteres, puede contar con todo tipo de texto, letra, numeros y caracteres especiales
 function validarPassword() {
     const v = $("password").value.trim();
-    const ok = v.length >= 6; // Mínimo 6 caracteres
+    const ok = v.length >= 6; 
     console.log(`Validación contraseña: ${ok ? "✓ Correcto" : "La contraseña debe tener al menos 6 caracteres."}`);
     setFieldState("password", { valid: ok, msg: ok ? "✓ Correcto" : "La contraseña debe tener al menos 6 caracteres." });
     return ok;

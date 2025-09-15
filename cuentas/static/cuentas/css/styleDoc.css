@@ -1,0 +1,71 @@
+:root {
+    --color-arena: #E4CDA7;
+    --color-crema: #FBF7F2;
+    --color-marron: #8B6B4C;
+    --color-cobre: #B87333;
+    --color-white: #ffffff;
+    --color-dark: #2c2c2c;
+    --shadow: 0 2px 10px rgba(139, 107, 76, 0.1);
+    --transition: all 0.3s ease;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: var(--color-crema);
+  color: var(--color-dark);
+  display: flex;
+  justify-content: center;   
+  align-items: center;       
+  min-height: 100vh;
+  margin: 0;
+}
+
+.container {
+  width: 100%;
+  max-width: 500px; 
+  background: var(--color-white);
+  box-shadow: var(--shadow);
+  border-radius: 12px;
+  padding: 35px;
+  text-align: center;
+}
+
+h1 {
+  margin-bottom: 30px;
+  color: var(--color-marron);
+}
+
+.button-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.btn {
+  width: 80%; 
+  max-width: 320px;
+  padding: 18px 25px; 
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  border: none;
+  background: var(--color-cobre);
+  color: var(--color-white);
+  border-radius: 10px;
+  transition: var(--transition);
+  box-shadow: var(--shadow);
+  margin-bottom: 30px; /* separación entre botones */
+}
+
+.btn:last-child {
+  margin-bottom: 0; /* evita espacio extra en el último */
+}
+
+.btn:hover {
+  background: var(--color-marron);
+  transform: translateY(-3px);
+}
+
+.btn:active {
+  transform: scale(0.95);
+}

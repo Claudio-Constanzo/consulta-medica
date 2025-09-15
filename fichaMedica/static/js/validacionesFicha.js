@@ -35,10 +35,10 @@ function validarNombrePaciente() {
     return ok;
 }
 
-// Validar teléfono (solo 9 números)
+// Validar teléfono (solo 9 números con el formato de numero chileno)
 function validarTelefonoPaciente() {
     const v = $("telefono_paciente").value.trim();
-    const ok = /^[9]{1}[0-9]{8}$/.test(v); // Solo números, y debe ser un número válido de teléfono chileno (9 seguido de 8 dígitos)
+    const ok = /^[9]{1}[0-9]{8}$/.test(v); 
     setFieldState("telefono_paciente", { valid: ok, msg: ok ? "✓ Correcto" : "El teléfono debe ser un número válido de 9 dígitos." });
     return ok;
 }
@@ -54,7 +54,7 @@ function validarDireccionPaciente() {
 // Validar título (solo letras)
 function validarTitulo() {
     const v = $("titulo").value.trim();
-    const ok = /^[A-Za-zÁÉÍÓÚáéíóúÑñ ]+$/.test(v); // Solo letras
+    const ok = /^[A-Za-zÁÉÍÓÚáéíóúÑñ ]+$/.test(v); 
     setFieldState("titulo", { valid: ok, msg: ok ? "✓ Correcto" : "El título solo puede contener letras." });
     return ok;
 }
@@ -62,7 +62,7 @@ function validarTitulo() {
 // Validar notas (es obligatorio)
 function validarNotas() {
     const v = $("notas").value.trim();
-    const ok = v.length > 0; // Obligatorio
+    const ok = v.length > 0; 
     setFieldState("notas", { valid: ok, msg: ok ? "✓ Correcto" : "Las notas son obligatorias." });
     return ok;
 }
@@ -70,7 +70,7 @@ function validarNotas() {
 // Validar hora de ficha (es obligatorio)
 function validarHoraFicha() {
     const v = $("hora_ficha").value;
-    const ok = v !== ""; // Obligatorio
+    const ok = v !== ""; 
     setFieldState("hora_ficha", { valid: ok, msg: ok ? "✓ Correcto" : "La hora de la ficha es obligatoria." });
     return ok;
 }

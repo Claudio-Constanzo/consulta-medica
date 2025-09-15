@@ -24,13 +24,14 @@ from fichaMedica.views import fichaMedica_view
 from usuarios.views import usuarios_view
 from agendarHora.views import agendar_cita_view, confirmacion_cita_view
 
+
 from home.views import home
 from cuentas import urls
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('registro/', registro_view, name='registro'), ##ruta de formulario de registro
-    path('', home ), # ruta que se utiliza para vizualizar el inicio de la pagina
+    path('', home, name='home' ), # ruta que se utiliza para vizualizar el inicio de la pagina
     path('doctor/', doctor_view, name='doctor'), #Ruta para el formulario de registro de doctores
     path('fichaMedica/', fichaMedica_view, name='fichaMedica'), #Ruta para el formulario de la ficha medica 
     path('registro-usuarios/', usuarios_view, name='usuarios'), #Ruta para el formulario de usuarios
