@@ -1,0 +1,131 @@
+:root {
+    --color-arena: #E4CDA7;
+    --color-crema: #FBF7F2;
+    --color-marron: #8B6B4C;
+    --color-cobre: #B87333;
+    --color-white: #ffffff;
+    --color-dark: #2c2c2c;
+    --shadow: 0 2px 10px rgba(139, 107, 76, 0.1);
+    --transition: all 0.3s ease;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: var(--color-crema);
+    color: var(--color-dark);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 0;
+    margin: 0;
+}
+
+/* Contenedor principal */
+.container {
+    width: 100%;
+    max-width: 800px;
+    background: var(--color-white);
+    box-shadow: var(--shadow);
+    border-radius: 12px;
+    padding: 30px;
+    text-align: left;
+}
+
+/* Buscador */
+.search-container {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.search-container input[type="text"] {
+    flex: 1;
+    padding: 10px 15px;
+    border-radius: 8px;
+    border: 1px solid var(--color-marron);
+    font-size: 16px;
+}
+
+.search-container button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    background: var(--color-cobre);
+    color: var(--color-white);
+    font-weight: bold;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.search-container button:hover {
+    background: var(--color-marron);
+}
+
+/* Tabla de fichas */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 12px 15px;
+    border: 1px solid var(--color-marron);
+    text-align: left;
+}
+
+th {
+    background: var(--color-arena);
+    color: var(--color-dark);
+}
+
+td button {
+    padding: 5px 10px;
+    margin-right: 5px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+td button.view {
+    background: var(--color-cobre);
+    color: var(--color-white);
+}
+
+td button.update {
+    background: var(--color-arena);
+    color: var(--color-dark);
+}
+
+td button.delete {
+    background: var(--color-marron);
+    color: var(--color-white);
+}
+
+td button:hover {
+    transform: translateY(-2px);
+    opacity: 0.9;
+}
+
+@media (max-width: 600px) {
+    .search-container {
+        flex-direction: column;
+    }
+
+    td button {
+        margin-bottom: 5px;
+        width: 100%;
+    }
+}
+
+.Logo {
+    position: absolute; /* Para posicionarlo respecto a la ventana */
+    top: 20px;          
+    right: 20px;       
+}
+
+.Logo img {
+    width: 150px;       
+    height: auto;      
+}

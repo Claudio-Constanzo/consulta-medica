@@ -19,14 +19,15 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path, include
 from formulario.views import registro_view
-from doctor.views import doctor_view
+from doctor.views import doctor_view, crudFicha_view
 from fichaMedica.views import fichaMedica_view
 from usuarios.views import usuarios_view
 from agendarHora.views import agendar_cita_view, confirmacion_cita_view
 
-
 from home.views import home
 from cuentas import urls
+
+app_name = "crud"
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -37,7 +38,8 @@ urlpatterns = [
     path('registro-usuarios/', usuarios_view, name='usuarios'), #Ruta para el formulario de usuarios
     path('cuenta/',include('cuentas.urls')), # rutas para registro y login
     path('agendar-cita/', agendar_cita_view, name='agendar-cita'), #ruta para agendar cita
-    path('cita-confirmacion/', confirmacion_cita_view, name='cita-confirmacion'), #ruta de confirmacion de cita    
+    path('cita-confirmacion/', confirmacion_cita_view, name='cita-confirmacion'), #ruta de confirmacion de cita
+    path('crud-ficha/', crudFicha_view, name='crud-ficha')    
 ]
 
 if settings.DEBUG:

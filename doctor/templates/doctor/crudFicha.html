@@ -1,0 +1,66 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fichas Médicas</title>
+    <link rel="stylesheet" href="../../../../static/css/styleCrudFicha.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Fichas Médicas</h1>
+
+        <!-- Buscador -->
+        <div class="search-bar">
+            <input type="text" id="buscar" placeholder="Buscar por nombre o apellido">
+        </div>
+
+        <!-- Tabla de pacientes -->
+        <table class="tabla-pacientes">
+            <thead>
+                <tr>
+                    <th>Nombre y Apellido</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody id="tabla-cuerpo">
+                <tr>
+                    <td>Juanito Perez</td>
+                    <td>
+                        <button class="btn-accion" onclick="vistaPrevia(this)">Vista previa</button>
+                        <button class="btn-accion" onclick="actualizar(this)">Actualizar</button>
+                        <button class="btn-accion eliminar" onclick="eliminar(this)">Eliminar</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Valeria Lopez</td>
+                    <td>
+                        <button class="btn-accion" onclick="vistaPrevia(this)">Vista previa</button>
+                        <button class="btn-accion" onclick="actualizar(this)">Actualizar</button>
+                        <button class="btn-accion eliminar" onclick="eliminar(this)">Eliminar</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Sandra Lopez</td>
+                    <td>
+                        <button class="btn-accion" onclick="vistaPrevia(this)">Vista previa</button>
+                        <button class="btn-accion" onclick="actualizar(this)">Actualizar</button>
+                        <button class="btn-accion eliminar" onclick="eliminar(this)">Eliminar</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Claudio Constanzo</td>
+                    <td>
+                        <button class="btn-accion" onclick="vistaPrevia(this)">Vista previa</button>
+                        <button class="btn-accion" onclick="actualizar(this)">Actualizar</button>
+                        <button class="btn-accion eliminar" onclick="eliminar(this)">Eliminar</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="Logo">
+        <img src="{% static 'img/Logo clinica.png' %}" alt="Logo">
+    </div>
+    <script src="{% static 'js/funcionalidadFicha.js' %}"></script>

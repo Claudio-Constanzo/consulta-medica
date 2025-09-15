@@ -69,3 +69,15 @@ h1 {
 .btn:active {
   transform: scale(0.95);
 }
+
+.Logo {
+    position: absolute; /* Para posicionarlo respecto a la ventana */
+    top: 20px;          
+    right: 20px;       
+}
+
+.Logo img {
+    width: 150px;       
+    height: auto;      
+}
+
