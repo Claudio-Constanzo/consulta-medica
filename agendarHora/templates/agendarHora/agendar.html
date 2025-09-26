@@ -1,4 +1,5 @@
 {% load static %}
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -7,6 +8,11 @@
      <link rel="stylesheet" href="{% static 'formulario/css/formulariostyle.css' %}">
 </head>
 <body>
+{%extends 'base/base.html' %}
+
+{% block title %}Agendar Cita{% endblock %}
+
+{% block content %}    
 <div class="container">
     <h1>Agendar Cita Médica</h1>
     <form method="post">
@@ -14,6 +20,14 @@
         {{ form.as_p }}
         <button type="submit" class="btn btn-primary">Agendar</button>
     </form>
+    <!-- mensaje de error o exito -->
+    {% if success_message %}
+        <p class="success-message">{{ success_message }}</p>
+    {% endif %}
+    {% if error_message %}
+        <p class="error-message">{{ error_message }}</p>
+    {% endif %}
+    {% endblock %}
 </div>
 </body>
 </html>
