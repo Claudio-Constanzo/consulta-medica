@@ -5,7 +5,7 @@ from datetime import date
 class CitaForm(forms.ModelForm):
     class Meta:
         model = Cita
-        fields = ['paciente', 'doctor', 'fecha', 'hora', 'motivo']
+        fields = ['fecha', 'hora', 'motivo']
         widgets = {
             'fecha': forms.DateInput(attrs={'type': 'date', 'min': date.today().strftime('%Y-%m-%d')}),
             'hora': forms.TimeInput(attrs={'type': 'time'}),

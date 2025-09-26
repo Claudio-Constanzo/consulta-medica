@@ -1,3 +1,4 @@
 fichaMedica/__pycache__/models.cpython-313.pyc
 formulario/__pycache__/models.cpython-313.pyc
 /consulta/__pycache__
+*.pyc

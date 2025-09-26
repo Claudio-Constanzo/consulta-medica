@@ -1,12 +1,10 @@
 from django.db import models
 from django.conf import settings
-from formulario.models import Paciente, Doctor
+
 
 User = settings.AUTH_USER_MODEL
 
 class Cita(models.Model):
-    paciente = models.ForeignKey(Paciente, on_delete=models.CASCADE)
-    doctor = models.ForeignKey(Doctor, on_delete=models.CASCADE)
     fecha = models.DateField()
     hora = models.TimeField()
     motivo = models.CharField(max_length=200, blank=True)
